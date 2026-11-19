@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+ 
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <!-- Free library to read the free MaxMind GeoLite2 country database -->
+    <PackageReference Include="MaxMind.GeoIP2" Version="5.2.0" />
+  </ItemGroup>
+ 
+  <!-- NEW: copy the country file next to the server when you run or publish it -->
+  <ItemGroup>
+    <None Update="GeoLite2-Country.mmdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+ 
+</Project>
